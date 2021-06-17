@@ -16,11 +16,21 @@ import createSagaMiddleware from "redux-saga";
 function* rootSaga() {
     yield takeEvery('GET_FAVORITES', getFavorites);
     yield takeEvery('ADD_FAVORITE', postFavorite);
+    yield takeEvery('GET_SEARCH', getSearch);
 }
 
 
 
 //Reducers⬇
+
+const giphyReducer = (state = [], action) => {
+    switch(action.type) {
+        case "FETCH_SEARCH":
+            return action.payload;
+        default:
+            return state;
+    }
+}
 
 const favoriteReducer = (state = [], action) => {
   switch (action.type) {
@@ -40,10 +50,20 @@ function* getFavorites() {
     const response = yield axios.get("/api/favorite");
     yield put({ type: "FETCH_FAVORITES", payload: response.data });
   } catch (error) {
-    console.log(`oh noo ${error} in GET`);
+    console.log(`oh noo ${error} in GET FAVORITES`);
   }
 }
 
+function* getSearch(action) {
+    try {
+        const response = yield axios.post("/api/giphy", action.payload);
+        console.log(response);
+        yield put({ type: "FETCH_SEARCH", payload: response.data });
+        console.log('in getSearch response.data', response.data);
+      } catch (error) {
+        console.log(`oh noo ${error} in GET GIPHY`)
+    }
+}
 // post saga ⬇
 
 function* postFavorite() {
@@ -51,7 +71,7 @@ function* postFavorite() {
         yield axios.post('/api/favorite', action.payload)
         yield put({ type: 'GET_FAVORITES'})
     }catch(error) {
-        console.error(`oh noo ${error} in POST`)
+        console.error(`oh noo ${error} in POST FAVORITE`)
       }
     
 }
@@ -66,7 +86,8 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
     combineReducers({
-        favoriteReducer
+        favoriteReducer,
+        giphyReducer
     }),
     applyMiddleware(sagaMiddleware, logger)
 );

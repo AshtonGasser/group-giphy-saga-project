@@ -37,7 +37,7 @@ function Search() {
 
     const giphySearch = useSelector( store => store.giphyReducer);
 
-    console.log('giphy search', giphySearch);
+    console.log('giphy search', giphySearch, 'trying stuff', giphySearch?.data?.[0]);
 
     return(
 
@@ -47,6 +47,7 @@ function Search() {
             <form onSubmit={handleSubmit}>
             <input onChange={handleSearchChange} placeholder="search" value={search} />
             <button type="submit">Search</button>
+            <img src = {giphySearch?.[0].images?.original.url} alt="" />
             </form>
 
         </>

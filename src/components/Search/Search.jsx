@@ -50,6 +50,22 @@ function Search() {
             <img src = {giphySearch?.[0].images?.original.url} alt="" />
             </form>
 
+            <div>
+
+                    {giphySearch.map((giph, i) => {
+
+                        return(
+
+                            <div>
+                                // fINISH DOT MAPPPPPPPPPPPP
+                            </div>
+
+                        )
+
+                    })}
+
+            </div>
+
         </>
 
     ) // end return

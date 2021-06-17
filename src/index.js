@@ -53,6 +53,7 @@ function* getFavorites() {
     console.log(`oh noo ${error} in GET FAVORITES`);
   }
 }
+// we are only getting info from giphy so we dont need to call our get to refresh
 
 function* getSearch(action) {
     try {

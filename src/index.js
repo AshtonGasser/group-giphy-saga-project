@@ -57,7 +57,6 @@ function* getFavorites() {
 function* getSearch(action) {
     try {
         const response = yield axios.post("/api/giphy", action.payload);
-        console.log(response);
         yield put({ type: "FETCH_SEARCH", payload: response.data });
         console.log('in getSearch response.data', response.data);
       } catch (error) {

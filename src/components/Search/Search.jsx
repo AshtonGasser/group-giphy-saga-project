@@ -25,7 +25,7 @@ function Search() {
         event.preventDefault();
         dispatch({
             type: 'GET_SEARCH',
-            payload: search
+            payload: {search: search}
         })
         setSearch('');
     }

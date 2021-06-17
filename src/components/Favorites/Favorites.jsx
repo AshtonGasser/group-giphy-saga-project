@@ -1,6 +1,8 @@
-import useHistory from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 function Favorites() {
+
+    const history = useHistory();
 
     return(
 

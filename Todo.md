@@ -27,7 +27,9 @@ Route: Search
 
 [] on click of giphy, save url to favorites table in db
     [] alert user that they are about to favorite the selected giphy
-    [] server side favorite.router.js (post)
+    [] server side favorite.router.js (post)'
+
+[] route to favorites
 
 Route: Favorites
 [] display all saved giphys from favorite table (get)
@@ -35,6 +37,9 @@ Route: Favorites
 [] assign category to any favorite (put)
     [] dropdown menu attached to each giphy with category options and save button
     [] server side favorite.router.js put
+        [] assign category id in favorites table that matches category.id
+
+[] route back to search
 
 
 

@@ -37,7 +37,7 @@ function Search() {
 
     const giphySearch = useSelector( store => store.giphyReducer);
 
-    console.log('giphy search', giphySearch, 'trying stuff', giphySearch?.data?.[0]);
+    console.log('trying stuff', giphySearch?.data?.[0]);
 
     return(
 
@@ -52,7 +52,18 @@ function Search() {
 
             <div>
 
-                   
+                    {giphySearch?.data?.map((gif, i) => {
+
+                        return(
+                            
+                            <div key={i} >
+                                <img src = {gif?.images?.original.url} alt="yikes" />
+                                {/* on click */}
+                            </div>
+
+                        )
+
+                    })}
 
             </div>
 

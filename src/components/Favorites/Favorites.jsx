@@ -79,6 +79,7 @@ function Favorites() {
               <img src={favorite?.path} alt="favorite" />
             </div>
           );
+          
           {
             /* drop-down menu */
           }

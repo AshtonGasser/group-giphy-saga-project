@@ -67,7 +67,7 @@ function* getSearch(action) {
 }
 // post saga ⬇
 
-function* postFavorite() {
+function* postFavorite(action) {
     try{
         yield axios.post('/api/favorite', action.payload)
         yield put({ type: 'GET_FAVORITES'})

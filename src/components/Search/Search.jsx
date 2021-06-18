@@ -47,10 +47,10 @@ function Search() {
             <form onSubmit={handleSubmit}>
             <input onChange={handleSearchChange} placeholder="search" value={search} />
             <button type="submit">Search</button>
-            <img src = {giphySearch?.[0].images?.original.url} alt="" />
+            <img src = {giphySearch?.data?.[0].images?.original.url} alt="" />
             </form>
 
-            <div>
+            {/* <div>
 
                     {giphySearch.map((giph, i) => {
 
@@ -64,7 +64,7 @@ function Search() {
 
                     })}
 
-            </div>
+            </div> */}
 
         </>
 

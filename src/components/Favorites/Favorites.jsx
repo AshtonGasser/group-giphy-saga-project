@@ -88,7 +88,6 @@ function Favorites() {
 
 
 
-
       <div>
 
         <Button
@@ -109,6 +108,15 @@ function Favorites() {
         >
           <StyledFavoriteItem>
             <ListItemText primary="funny" />
+          </StyledFavoriteItem>
+          <StyledFavoriteItem>
+            <ListItemText primary="category" />
+          </StyledFavoriteItem>
+          <StyledFavoriteItem>
+            <ListItemText primary="cartoon" />
+          </StyledFavoriteItem>
+          <StyledFavoriteItem>
+            <ListItemText primary="meme" />
           </StyledFavoriteItem>
         </StyledMenu>
         {/* <p>in Favorites</p> */}

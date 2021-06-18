@@ -77,30 +77,6 @@ function Favorites() {
           return (
             <div key={id}>
               <img src={favorite?.path} alt="favorite" />
-
-              <div>
-                <Button
-                  aria-controls="customized-menu"
-                  aria-haspopup="true"
-                  variant="contained"
-                  color="secondary"
-                  onClick={handleClick}
-                >
-                  Open Favorites
-                </Button>
-                <StyledMenu
-                  id="customized-menu"
-                  anchorEl={anchorEl}
-                  keepMounted
-                  open={Boolean(anchorEl)}
-                  onClose={handleClose}
-                >
-                  <StyledFavoriteItem>
-                    <ListItemText primary="funny" />
-                  </StyledFavoriteItem>
-                </StyledMenu>
-                {/* <p>in Favorites</p> */}
-              </div>
             </div>
           );
           {
@@ -108,6 +84,41 @@ function Favorites() {
           }
         })}
       </div>
+
+
+
+
+
+      <div>
+
+        <Button
+          aria-controls="customized-menu"
+          aria-haspopup="true"
+          variant="contained"
+          color="secondary"
+          onClick={handleClick}
+        >
+          Open Favorites
+        </Button>
+        <StyledMenu
+          id="customized-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+        >
+          <StyledFavoriteItem>
+            <ListItemText primary="funny" />
+          </StyledFavoriteItem>
+        </StyledMenu>
+        {/* <p>in Favorites</p> */}
+      </div>
+
+
+
+
+
+
     </div>
   ); // end return
 } // end Favorites fn

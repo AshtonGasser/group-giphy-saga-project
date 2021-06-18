@@ -8,6 +8,7 @@ const router = express.Router();
 // return all favorite images
 
 router.get('/', (req, res) => {
+  const queryText = `SELECT id, name FROM `
   res.sendStatus(200);
 });
 

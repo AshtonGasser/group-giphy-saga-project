@@ -15,8 +15,7 @@ VALUES ('funny'), ('cohort'), ('cartoon'), ('meme');
 
 CREATE TABLE "favorites" (
 "id" SERIAL PRIMARY KEY,
-    "path" VARCHAR (100) NOT NULL,
+    "path" VARCHAR (255) NOT NULL,
     "description" VARCHAR (250), 
     "category_id" INT REFERENCES "category"
-
 );

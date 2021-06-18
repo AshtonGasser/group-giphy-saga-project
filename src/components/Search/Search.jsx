@@ -34,6 +34,14 @@ function Search() {
         setSearch(event.target.value); 
     }
 
+    const favoriteImage = (url) => {
+        console.log('logging image url', url);
+        dispatch({
+            type: 'ADD_FAVORITE',
+            payload: {url: url}
+        })
+    }
+
 
     const giphySearch = useSelector( store => store.giphyReducer);
 
@@ -47,7 +55,7 @@ function Search() {
             <form onSubmit={handleSubmit}>
             <input onChange={handleSearchChange} placeholder="search" value={search} />
             <button type="submit">Search</button>
-            <img src = {giphySearch?.data?.[0].images?.original.url} alt="" />
+            {/* <img src = {giphySearch?.data?.[0].images?.original.url} alt="" /> */}
             </form>
 
             <div>
@@ -57,15 +65,15 @@ function Search() {
                         return(
                             
                             <div key={i} >
-                                <img src = {gif?.images?.original.url} alt="yikes" />
-                                {/* on click */}
+                                <img onClick={ () => favoriteImage(gif?.images?.original.url) } src = {gif?.images?.original.url} alt="yikes" />
+                                
                             </div>
 
                         )
 
                     })}
 
-            </div>
+            </div> 
 
         </>
 

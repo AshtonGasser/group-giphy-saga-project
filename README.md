@@ -13,6 +13,8 @@ Do not clone this repository. Instead, have one person create a new repo by clic
 See the `database.sql` file for database setup and details. It offers some of the SQL to get you started but you'll need to set up your tables and the relationships between them.
 
 
+
+
 ## Development Setup Instructions
 
 * Run `npm install`
